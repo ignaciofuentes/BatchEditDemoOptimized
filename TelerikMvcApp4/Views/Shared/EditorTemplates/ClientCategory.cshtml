@@ -1,0 +1,12 @@
+﻿@(Html.Kendo().ComboBoxFor(m => m)
+    .Placeholder("Select a Category")
+    .DataTextField("Name")
+    .DataValueField("Name")
+    .DataSource(ds =>
+    {
+
+        ds.Read(r => r.Action("Categories", "Home"));
+
+    })
+    .Events(d => d.Change("selectionChanged"))
+)
